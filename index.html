@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090d18">
+  <title>DINO QUEST — Learn. Run. Conquer.</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+    <section id="game-shell" aria-label="DINO QUEST game">
+      <canvas id="gameCanvas"></canvas>
+
+      <header id="hud" class="hud hidden">
+        <div class="brand">🦖 DINO <span>QUEST</span></div>
+        <div class="stats">
+          <div><small>SCORE</small><strong id="score">00000</strong></div>
+          <div><small>BEST</small><strong id="highScore">00000</strong></div>
+          <div><small>LIVES</small><strong id="lives">♥♥♥</strong></div>
+          <div><small>LEVEL</small><strong id="level">1</strong></div>
+        </div>
+        <div class="progress-wrap"><div id="progressBar"></div></div>
+        <button id="pauseBtn" class="icon-btn" aria-label="Pause">Ⅱ</button>
+      </header>
+
+      <div id="toast" class="toast"></div>
+
+      <section id="startScreen" class="overlay">
+        <div class="panel hero-panel">
+          <div class="logo-dino">🦖</div>
+          <p class="eyebrow">AN EDUCATIONAL ENDLESS RUNNER</p>
+          <h1>DINO <span>QUEST</span></h1>
+          <p class="subtitle">Run fast. Think faster. Master every quest.</p>
+          <div class="feature-row">
+            <span>📚 4 Subjects</span><span>⚡ Power-ups</span><span>🏆 High Scores</span>
+          </div>
+          <button id="startBtn" class="primary-btn">START QUEST <b>→</b></button>
+          <p class="controls">SPACE / ↑ / TAP = Jump &nbsp; • &nbsp; P = Pause</p>
+        </div>
+      </section>
+
+      <section id="pauseScreen" class="overlay hidden">
+        <div class="panel compact">
+          <p class="eyebrow">QUEST PAUSED</p><h2>Take a breather 🌙</h2>
+          <p>Your dino is waiting.</p>
+          <button id="resumeBtn" class="primary-btn">RESUME</button>
+          <button id="quitBtn" class="ghost-btn">QUIT TO MENU</button>
+        </div>
+      </section>
+
+      <section id="quizScreen" class="overlay hidden">
+        <div class="panel quiz-panel">
+          <div class="quiz-top"><span id="quizSubject">SCIENCE</span><span id="quizCounter">QUEST 1</span></div>
+          <h2 id="quizQuestion">Question</h2>
+          <div id="answers" class="answers"></div>
+          <div id="quizFeedback" class="feedback"></div>
+        </div>
+      </section>
+
+      <section id="gameOverScreen" class="overlay hidden">
+        <div class="panel">
+          <p class="eyebrow">QUEST COMPLETE</p>
+          <h2 id="gameOverTitle">RUN ENDED</h2>
+          <div class="final-score"><span id="finalScore">0</span><small>POINTS</small></div>
+          <div class="results"><span>🏆 Best <b id="finalBest">0</b></span><span>📚 Level <b id="finalLevel">1</b></span><span>🧠 Quizzes <b id="finalQuizzes">0</b></span></div>
+          <div class="leaderboard"><h3>LOCAL LEADERBOARD</h3><ol id="leaderboard"></ol></div>
+          <button id="restartBtn" class="primary-btn">RUN AGAIN <b>↻</b></button>
+          <button id="menuBtn" class="ghost-btn">MAIN MENU</button>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="js/questions.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
